@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-        <title>Pinegrow Vite Tailwind CSS - Quick start template</title>
-        <link href="/tailwind_theme/tailwind.css" rel="stylesheet"/>
-        <link rel="pg-require" href="projectdb.pgml"/>
-        <link rel="pg-require" href="pinegrow.json"/>
-        <script>
+  <head data-pg-collapsed>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Pinegrow Vite Tailwind CSS - Quick start template</title>
+    <link href="/tailwind_theme/tailwind.css" rel="stylesheet" />
+    <link rel="pg-require" href="projectdb.pgml" />
+    <link rel="pg-require" href="pinegrow.json" />
+    <script>
       /* Pinegrow Interactions, do not remove */ ;(function () {
         try {
           if (!document.documentElement.hasAttribute('data-pg-ia-disabled')) {
@@ -45,166 +48,180 @@
         }
       })()
     </script>
-    </head>
-    <body>
-        <script type="module" data-pg-name="Pt-App-Counter">
-    import { createApp } from 'https://unpkg.com/petite-vue?module'
-    const state = {
-    posts: [
-        //    {
-        //        id: 1,
-        //        title: 'Hello World!',
-        //        link: 'http://nocodetheme.local/hello-world/',
-        //        excerpt: '<p>Welcome to WordPress. This is your first post. Edit or delete it, then start writing!</p>\n',
-        //        tagsList: [{id: 162, name: 'Sample', link: 'http://nocodetheme.local/tag/sample/'}],
-        //        featuredMedia: [{id: 181, source_url: 'http://nocodetheme.local/wp-content/uploads/2008/06/dsc20050102_192118_51.jpg'}],
-        //    }
-    ],
-    async fetchData() {
-        const res = await fetch(
-        'http://nocodetheme.local/wp-json/wp/v2/posts/?_fields=author,id,excerpt,title,link,tags,featured_media',
-        )
-        const postsRaw = await res.json()
-        postsRaw.forEach(
-        async ({ id, title, link, excerpt, tags, featured_media }) => {
-            const tagsList = await this.fetchTags(tags)
-            const featuredMedia = await this.fetchFeaturedMedia(featured_media)
-            this.posts.push({
-            id,
-            title: title.rendered,
-            link,
-            excerpt: excerpt.rendered,
-            tagsList,
-            featuredMedia,
-            })
-        },
-        )
-        setTimeout(() => console.log(this.posts), 2000)
-    },
-    async fetchTags(ids) {
-        const tagsList = []
-        if (ids.length) {
-        try {
-            const res = await fetch(
-            `http://nocodetheme.local/wp-json/wp/v2/tags?include=${ids}`,
-            )
-            const { id, name, link } = await res.json()
-            tagsList.push({ id, name, link })
-        } catch (err) {
-            console.log(err)
-        }
-        }
-        return tagsList.length
-        ? tagsList
-        : [
-            {
-                id: 162,
-                name: 'Posts',
-                link: 'http://nocodetheme.local/tag/sample/',
-            },
-            ]
-    },
-    async fetchFeaturedMedia(featured_media) {
-        if (featured_media) {
-        try {
-            const res = await fetch(
-            `http://nocodetheme.local/wp-json/wp/v2/media/${featured_media}`,
-            )
-            const { id, source_url } = await res.json()
-            console.log(source_url)
-            return {
-            id,
-            source_url,
-            }
-        } catch (err) {
-            console.log(err)
-        }
-        }
-        return {
-        id: 181,
-        source_url:
-            'https://images.unsplash.com/photo-1535957998253-26ae1ef29506?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wyMDkyMnwwfDF8c2VhcmNofDd8fG9mZmljZXxlbnwwfHx8fDE3MDY3NDg2NzZ8MA&ixlib=rb-4.0.3&q=80&w=1080',
-        }
-    },
-    }
-    createApp(state).mount()
-</script>
-        <div class="flex flex-col bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-50">
-            <nav class="bg-gray-800" data-pg-collapsed>
-                <div class="mx-auto max-w-7xl px-2 sm:px-4 lg:px-8">
-                    <div class="relative flex h-16 items-center justify-between">
-                        <div class="flex items-center px-2 lg:px-0">
-                            <div class="flex-shrink-0">
-                                <a href="/" cms-site-link="home"><img src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company" cms-site-logo class="h-16"/></a>
-                            </div>
-                            <div class="hidden lg:ml-6 lg:block">
-                                <ul class="flex space-x-4" cms-menu="primary">
-                                    <li id="menu2">
-                                        <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Team</a>
-                                    </li>
-                                    <li id="menu1">
-                                        <a href="#" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white">Dashboard</a>
-                                    </li>
-                                    <li id="menu3">
-                                        <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Projects</a>
-                                    </li>
-                                    <li id="menu4">
-                                        <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Calendar</a>
-                                    </li>
-                                    <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="flex flex-1 justify-center px-2 lg:ml-6 lg:justify-end">
-                            <div class="w-full max-w-lg lg:max-w-xs">
-                                <form action="<?php echo esc_url(home_url('/'));?>" method="get">
-                                    <label for="search" class="sr-only">Search</label>
-                                    <div class="relative">
-                                        <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                                            <svg class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                                <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z" clip-rule="evenodd"/>
-                                            </svg>
-                                        </div>
-                                        <input id="search" name="s" class="block w-full rounded-md border-0 bg-gray-700 py-1.5 pl-10 pr-3 text-gray-300 placeholder:text-gray-400 focus:bg-white focus:text-gray-900 focus:ring-0 sm:text-sm sm:leading-6" placeholder="Search" type="search"/>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="flex lg:hidden">
-                            <!-- Mobile menu button -->
-                            <button type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false" data-pg-ia='{"l":[{"name":"Hamburger","a":{"l":[{"t":"$#mobile-menu","l":[{"t":"set","p":0,"d":0,"l":{"display":"block"}}]}]},"trev":"true"}]}'>
-                                <span class="absolute -inset-0.5"></span>
-                                <span class="sr-only">Open main menu</span>
-                                <!--
+  </head>
+  <body>
+    <script type="module" data-pg-name="Pt-App-Counter">
+      import './get-wp-posts.js'
+    </script>
+    <div
+      class="flex flex-col bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-50"
+    >
+      <nav class="bg-gray-800" data-pg-collapsed>
+        <div class="mx-auto max-w-7xl px-2 sm:px-4 lg:px-8">
+          <div class="relative flex h-16 items-center justify-between">
+            <div class="flex items-center px-2 lg:px-0">
+              <div class="flex-shrink-0">
+                <a href="/" cms-site-link="home"
+                  ><img
+                    src="http://nocodetheme.local/wp-content/uploads/2023/12/vue-designer-logo-mixed.png"
+                    alt="Your Company"
+                    cms-site-logo
+                    class="h-16"
+                /></a>
+              </div>
+              <div class="hidden lg:ml-6 lg:block">
+                <ul class="flex space-x-4" cms-menu="primary">
+                  <li id="menu2" class="">
+                    <a
+                      href="http://nocodetheme.local/"
+                      class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                      title=""
+                      >Home</a
+                    >
+                  </li>
+                  <li id="menu2" class="">
+                    <a
+                      href="http://nocodetheme.local/about/"
+                      class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                      title=""
+                      >About</a
+                    >
+                  </li>
+                  <li id="menu2" class="">
+                    <a
+                      href="http://nocodetheme.local/articles/"
+                      class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                      title=""
+                      >Articles</a
+                    >
+                  </li>
+                  <li id="menu2" class="">
+                    <a
+                      href="http://nocodetheme.local/employees/"
+                      class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                      title=""
+                      >Employees</a
+                    >
+                  </li>
+                  <li id="menu2" class="">
+                    <a
+                      href="http://nocodetheme.local/contact/"
+                      class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                      title=""
+                      >Contact</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="flex flex-1 justify-center px-2 lg:ml-6 lg:justify-end">
+              <div class="w-full max-w-lg lg:max-w-xs">
+                <form
+                  action="<?php echo esc_url(home_url('/'));?>"
+                  method="get"
+                >
+                  <label for="search" class="sr-only">Search</label>
+                  <div class="relative">
+                    <div
+                      class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3"
+                    >
+                      <svg
+                        class="h-5 w-5 text-gray-400"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                        aria-hidden="true"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
+                          clip-rule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                    <input
+                      id="search"
+                      name="s"
+                      class="block w-full rounded-md border-0 bg-gray-700 py-1.5 pl-10 pr-3 text-gray-300 placeholder:text-gray-400 focus:bg-white focus:text-gray-900 focus:ring-0 sm:text-sm sm:leading-6"
+                      placeholder="Search"
+                      type="search"
+                    />
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="flex lg:hidden">
+              <!-- Mobile menu button -->
+              <button
+                type="button"
+                class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                aria-controls="mobile-menu"
+                aria-expanded="false"
+                data-pg-ia='{"l":[{"name":"Hamburger","a":{"l":[{"t":"$#mobile-menu","l":[{"t":"set","p":0,"d":0,"l":{"display":"block"}}]}]},"trev":"true"}]}'
+              >
+                <span class="absolute -inset-0.5"></span
+                ><span class="sr-only">Open main menu</span>
+                <!--
             Icon when menu is closed.
 
             Menu open: "hidden", Menu closed: "block"
           -->
-                                <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
-                                </svg>
-                                <!--
+                <svg
+                  class="block h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                  />
+                </svg>
+                <!--
             Icon when menu is open.
 
             Menu open: "block", Menu closed: "hidden"
           -->
-                                <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
-                                </svg>
-                            </button>
-                        </div>
-                        <div class="hidden lg:ml-4 lg:block">
-                            <div class="flex items-center">
-                                <!-- Profile dropdown -->
-                                <div class="relative ml-4 flex-shrink-0">
-                                    <div>
-                                        <button type="button" class="relative flex rounded-full bg-gray-800 text-sm text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
-                                            <span class="absolute -inset-1.5"></span>
-                                            <span class="sr-only">Open user menu</span>
-                                            <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt=""/>
-                                        </button>
-                                    </div>
-                                    <!--
+                <svg
+                  class="hidden h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="hidden lg:ml-4 lg:block">
+              <div class="flex items-center">
+                <!-- Profile dropdown -->
+                <div class="relative ml-4 flex-shrink-0">
+                  <div>
+                    <button
+                      type="button"
+                      class="relative flex rounded-full bg-gray-800 text-sm text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                      id="user-menu-button"
+                      aria-expanded="false"
+                      aria-haspopup="true"
+                    >
+                      <span class="absolute -inset-1.5"></span
+                      ><span class="sr-only">Open user menu</span>
+                      <img
+                        class="h-8 w-8 rounded-full"
+                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                        alt=""
+                      />
+                    </button>
+                  </div>
+                  <!--
               Dropdown menu, show/hide based on menu state.
 
               Entering: "transition ease-out duration-100"
@@ -214,166 +231,345 @@
                 From: "transform opacity-100 scale-100"
                 To: "transform opacity-0 scale-95"
             -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-                <!-- Mobile menu, show/hide based on menu state. -->
-                <div id="mobile-menu" class="hidden lg:hidden">
-                    <div class="space-y-1 px-2 pb-3 pt-2" cms-menu="primary">
-                        <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                        <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Team</a>
-                        <a href="#" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white">Dashboard</a>
-                        <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Projects</a>
-                        <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Calendar</a>
-                    </div>
-                </div>
-            </nav>
-            <main wp-site-content>
-                <section data-pg-name="Blog Section" cms-post="loop" cms-post-repeat="article" v-scope="{}" v-on:vue:mounted="fetchData()">
-                    <div class="bg-white py-24 sm:py-32">
-                        <div class="mx-auto max-w-7xl px-6 lg:px-8">
-                            <div class="mx-auto max-w-2xl lg:mx-0">
-                                <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                  From the blog </h2>
-                                <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl" wp-if-is-search> <span>Search Results For: </span><span wp-the-search-query wp-the-search-query-set="content">search terms</span> </h2>
-                                <p class="mt-2 text-lg leading-8 text-gray-600">
-                  Learn how to grow your business with our expert advice. </p>
-                            </div>
-                            <div class="flex flex-wrap">
-                                <div class="border-gray-200 border-t gap-x-8 gap-y-16 grid grid-cols-1 mt-10 mx-auto py-10 w-full sm:mt-16 sm:pt-16 lg:grid-cols-3 lg:mx-0 lg:w-3/4">
-                                    <article class="flex flex-col items-start justify-between justify-self-center max-w-xl" v-for="(post, index) in posts.reverse()" :key="index">
-                                        <div class="flex items-center justify-between text-xs w-full">
-                                            <time datetime="2020-03-16" class="text-gray-500">Mar 16, 2020</time>
-                                            <div class="py-1.5"><a class="relative z-10 rounded-full bg-gray-50 font-medium text-gray-600 hover:bg-gray-100" cms-tags="category" cms-tags-display="this" cms-tags-delimiter=", " v-for="(tag, index) in post.tagsList" :key="index" v-bind:href="tag.link">{{tag.name}}</a>
-                                            </div>
-                                        </div>
-                                        <div class="group relative">
-                                            <img wp-if-has-post-thumbnail="!" v-bind:src="post.featuredMedia.source_url"/><a href="#" cms-post-link v-bind:href="post.link"> <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600" cms-post-title><span>{{post.title}}</span></h3></a>
-                                            <p class="mt-5 line-clamp-3 text-sm leading-6 text-gray-600" cms-post-excerpt v-html="post.excerpt"></p>
-                                        </div>
-                                        <div class="relative mt-8 flex items-center gap-x-4">
-                                            <img src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="h-10 w-10 rounded-full bg-gray-50"/>
-                                            <div class="text-sm leading-6">
-                                                <p class="font-semibold text-gray-900"> <a href="#"> <span class="absolute inset-0"></span> Michael
-                            Foster </a> </p>
-                                                <p class="text-gray-600">Co-Founder / CTO</p>
-                                            </div>
-                                        </div>
-                                    </article>
-                                    <!-- More posts... -->
-                                </div>
-                                <div class="border-gray-200 border-t max-w-xl mt-10 mx-auto py-10 w-full sm:mt-16 sm:pt-16 md:w-full lg:grid-cols-3 lg:max-w-none lg:mx-0 lg:pl-10 lg:pr-0 lg:w-1/4">
-                                    <!-- More posts... -->
-                                    <div cms-template-part="template-parts/sidebar">Sidebar</div>
-                                </div>
-                            </div>
-                            <div cms-template-part="template-parts/pagination"></div>
-                        </div>
-                    </div>
-                </section>
-            </main>
-            <footer class="bg-gray-900" aria-labelledby="footer-heading" data-pg-collapsed>
-                <h2 id="footer-heading" class="sr-only">Footer</h2>
-                <div class="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
-                    <div class="xl:grid xl:grid-cols-3 xl:gap-8">
-                        <div class="space-y-8">
-                            <a cms-site-link="home"><img src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="Company name" cms-editable="logo_light" cms-editable-type="image" cms-editable-no-register cms-editable-image-size="medium" cms-editable-if class="h-32"/></a>
-                            <div class="text-gray-300">
-                                <p class="leading-6 text-sm" cms-sidebar="company-information">
-                  Making the world a better place through constructing elegant
-                  hierarchies. </p>
-                            </div>
-                            <div class="flex space-x-6" cms-template-part="template-parts/social-icons"></div>
-                        </div>
-                        <div class="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
-                            <div class="md:grid md:grid-cols-2 md:gap-8">
-                                <div>
-                                    <h3 class="text-sm font-semibold leading-6 text-white">
-                    Solutions </h3>
-                                    <ul role="list" class="mt-6 space-y-4">
-                                        <li>
-                                            <a href="#" class="text-sm leading-6 text-gray-300 hover:text-white">Marketing</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="text-sm leading-6 text-gray-300 hover:text-white">Analytics</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="text-sm leading-6 text-gray-300 hover:text-white">Commerce</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="text-sm leading-6 text-gray-300 hover:text-white">Insights</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="mt-10 md:mt-0">
-                                    <h3 class="text-sm font-semibold leading-6 text-white">
-                    Support </h3>
-                                    <ul role="list" class="mt-6 space-y-4">
-                                        <li>
-                                            <a href="#" class="text-sm leading-6 text-gray-300 hover:text-white">Pricing</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="text-sm leading-6 text-gray-300 hover:text-white">Documentation</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="text-sm leading-6 text-gray-300 hover:text-white">Guides</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="text-sm leading-6 text-gray-300 hover:text-white">API Status</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="md:grid md:grid-cols-2 md:gap-8">
-                                <div>
-                                    <h3 class="text-sm font-semibold leading-6 text-white">
-                    Company </h3>
-                                    <ul role="list" class="mt-6 space-y-4">
-                                        <li>
-                                            <a href="#" class="text-sm leading-6 text-gray-300 hover:text-white">About</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="text-sm leading-6 text-gray-300 hover:text-white">Blog</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="text-sm leading-6 text-gray-300 hover:text-white">Jobs</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="text-sm leading-6 text-gray-300 hover:text-white">Press</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="text-sm leading-6 text-gray-300 hover:text-white">Partners</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="mt-10 md:mt-0">
-                                    <h3 class="text-sm font-semibold leading-6 text-white">
-                    Legal </h3>
-                                    <ul role="list" class="mt-6 space-y-4">
-                                        <li>
-                                            <a href="#" class="text-sm leading-6 text-gray-300 hover:text-white">Claim</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="text-sm leading-6 text-gray-300 hover:text-white">Privacy</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="text-sm leading-6 text-gray-300 hover:text-white">Terms</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mt-16 border-t border-white/10 pt-8 sm:mt-20 lg:mt-24">
-                        <p class="leading-5 space-x-1 text-gray-400 text-xs"> <span>Copyright &copy;&nbsp;</span><span cms-function="current_year" cms-function-type="content">&nbsp;2020&nbsp;</span><span cms-site-name>&nbsp;Company Name&nbsp;</span>. All rights
-              reserved. </p>
-                    </div>
-                </div>
-            </footer>
+              </div>
+            </div>
+          </div>
         </div>
-        <script src="/tailwind_theme/pgia/lib/pgia.js"></script>
-        <script src="/tailwind_theme/js/main.js"></script>
-    </body>
+        <!-- Mobile menu, show/hide based on menu state. -->
+        <div id="mobile-menu" class="hidden lg:hidden">
+          <div class="space-y-1 px-2 pb-3 pt-2" cms-menu="primary">
+            <a
+              href="http://nocodetheme.local/"
+              class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+              title=""
+              >Home</a
+            ><a
+              href="http://nocodetheme.local/about/"
+              class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+              title=""
+              >About</a
+            ><a
+              href="http://nocodetheme.local/articles/"
+              class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+              title=""
+              >Articles</a
+            ><a
+              href="http://nocodetheme.local/employees/"
+              class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+              title=""
+              >Employees</a
+            ><a
+              href="http://nocodetheme.local/contact/"
+              class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+              title=""
+              >Contact</a
+            >
+          </div>
+        </div>
+      </nav>
+      <main wp-site-content>
+        <section
+          data-pg-name="Blog Section"
+          cms-post="loop"
+          cms-post-repeat="article"
+          v-scope="{}"
+          v-on:vue:mounted="fetchData()"
+        >
+          <div class="bg-white py-24 sm:py-32">
+            <div class="mx-auto max-w-7xl px-6 lg:px-8">
+              <div class="mx-auto max-w-2xl lg:mx-0">
+                <h2
+                  class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+                >
+                  From the blog
+                </h2>
+                <h2
+                  class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+                  wp-if-is-search
+                >
+                  <span>Search Results For: </span
+                  ><span wp-the-search-query wp-the-search-query-set="content"
+                    >search terms</span
+                  >
+                </h2>
+                <p class="mt-2 text-lg leading-8 text-gray-600">
+                  Learn how to grow your business with our expert advice.
+                </p>
+              </div>
+              <div class="flex flex-wrap">
+                <div
+                  class="border-gray-200 border-t gap-x-8 gap-y-16 grid grid-cols-1 mt-10 mx-auto py-10 w-full sm:mt-16 sm:pt-16 lg:grid-cols-3 lg:mx-0 lg:w-3/4"
+                >
+                  <article
+                    class="flex flex-col items-start justify-between justify-self-center max-w-xl"
+                    v-for="(post, index) in posts.reverse()"
+                    :key="index"
+                  >
+                    <div
+                      class="flex items-center justify-between text-xs w-full"
+                    >
+                      <time datetime="2020-03-16" class="text-gray-500"
+                        >Mar 16, 2020</time
+                      >
+                      <div class="py-1.5">
+                        <a
+                          class="relative z-10 rounded-full bg-gray-50 font-medium text-gray-600 hover:bg-gray-100"
+                          cms-tags="category"
+                          cms-tags-display="this"
+                          cms-tags-delimiter=", "
+                          v-for="(tag, index) in post.tagsList"
+                          :key="index"
+                          v-bind:href="tag.link"
+                          >{{tag.name}}</a
+                        >
+                      </div>
+                    </div>
+                    <div class="group relative">
+                      <img
+                        wp-if-has-post-thumbnail="!"
+                        v-bind:src="post.featuredMedia.source_url"
+                        src="https://pinegrow.com/placeholders/img13.jpg"
+                      /><a href="#" cms-post-link v-bind:href="post.link">
+                        <h3
+                          class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600"
+                          cms-post-title
+                        >
+                          <span>{{post.title}}</span>
+                        </h3>
+                      </a>
+                      <p
+                        class="mt-5 line-clamp-3 text-sm leading-6 text-gray-600"
+                        cms-post-excerpt
+                        v-html="post.excerpt"
+                      ></p>
+                    </div>
+                    <div class="relative mt-8 flex items-center gap-x-4">
+                      <img
+                        src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                        alt=""
+                        class="h-10 w-10 rounded-full bg-gray-50"
+                      />
+                      <div class="text-sm leading-6">
+                        <p class="font-semibold text-gray-900">
+                          <a href="#">
+                            <span class="absolute inset-0"></span> Michael
+                            Foster
+                          </a>
+                        </p>
+                        <p class="text-gray-600">Co-Founder / CTO</p>
+                      </div>
+                    </div>
+                  </article>
+                  <!-- More posts... -->
+                </div>
+                <div
+                  class="border-gray-200 border-t max-w-xl mt-10 mx-auto py-10 w-full sm:mt-16 sm:pt-16 md:w-full lg:grid-cols-3 lg:max-w-none lg:mx-0 lg:pl-10 lg:pr-0 lg:w-1/4"
+                >
+                  <!-- More posts... -->
+                  <div cms-template-part="template-parts/sidebar">Sidebar</div>
+                </div>
+              </div>
+              <div cms-template-part="template-parts/pagination"></div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer
+        class="bg-gray-900"
+        aria-labelledby="footer-heading"
+        data-pg-collapsed
+      >
+        <h2 id="footer-heading" class="sr-only">Footer</h2>
+        <div
+          class="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32"
+        >
+          <div class="xl:grid xl:grid-cols-3 xl:gap-8">
+            <div class="space-y-8">
+              <a cms-site-link="home"
+                ><img
+                  src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                  alt="Company name"
+                  cms-editable="logo_light"
+                  cms-editable-type="image"
+                  cms-editable-no-register
+                  cms-editable-image-size="medium"
+                  cms-editable-if
+                  class="h-32"
+              /></a>
+              <div class="text-gray-300">
+                <p
+                  class="leading-6 text-sm"
+                  cms-sidebar="company-information"
+                ></p>
+                <div id="block-10" class="widget widget_block widget_text">
+                  <p>Vue Designer<br />https://vuedesigner.com</p>
+                </div>
+              </div>
+              <div
+                class="flex space-x-6"
+                cms-template-part="template-parts/social-icons"
+              ></div>
+            </div>
+            <div class="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
+              <div class="md:grid md:grid-cols-2 md:gap-8">
+                <div>
+                  <h3 class="text-sm font-semibold leading-6 text-white">
+                    Solutions
+                  </h3>
+                  <ul role="list" class="mt-6 space-y-4">
+                    <li>
+                      <a
+                        href="#"
+                        class="text-sm leading-6 text-gray-300 hover:text-white"
+                        >Marketing</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="text-sm leading-6 text-gray-300 hover:text-white"
+                        >Analytics</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="text-sm leading-6 text-gray-300 hover:text-white"
+                        >Commerce</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="text-sm leading-6 text-gray-300 hover:text-white"
+                        >Insights</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+                <div class="mt-10 md:mt-0">
+                  <h3 class="text-sm font-semibold leading-6 text-white">
+                    Support
+                  </h3>
+                  <ul role="list" class="mt-6 space-y-4">
+                    <li>
+                      <a
+                        href="#"
+                        class="text-sm leading-6 text-gray-300 hover:text-white"
+                        >Pricing</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="text-sm leading-6 text-gray-300 hover:text-white"
+                        >Documentation</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="text-sm leading-6 text-gray-300 hover:text-white"
+                        >Guides</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="text-sm leading-6 text-gray-300 hover:text-white"
+                        >API Status</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="md:grid md:grid-cols-2 md:gap-8">
+                <div>
+                  <h3 class="text-sm font-semibold leading-6 text-white">
+                    Company
+                  </h3>
+                  <ul role="list" class="mt-6 space-y-4">
+                    <li>
+                      <a
+                        href="#"
+                        class="text-sm leading-6 text-gray-300 hover:text-white"
+                        >About</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="text-sm leading-6 text-gray-300 hover:text-white"
+                        >Blog</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="text-sm leading-6 text-gray-300 hover:text-white"
+                        >Jobs</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="text-sm leading-6 text-gray-300 hover:text-white"
+                        >Press</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="text-sm leading-6 text-gray-300 hover:text-white"
+                        >Partners</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+                <div class="mt-10 md:mt-0">
+                  <h3 class="text-sm font-semibold leading-6 text-white">
+                    Legal
+                  </h3>
+                  <ul role="list" class="mt-6 space-y-4">
+                    <li>
+                      <a
+                        href="#"
+                        class="text-sm leading-6 text-gray-300 hover:text-white"
+                        >Claim</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="text-sm leading-6 text-gray-300 hover:text-white"
+                        >Privacy</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="text-sm leading-6 text-gray-300 hover:text-white"
+                        >Terms</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-16 border-t border-white/10 pt-8 sm:mt-20 lg:mt-24">
+            <p class="leading-5 space-x-1 text-gray-400 text-xs">
+              <span>Copyright &copy;&nbsp;</span
+              ><span cms-function="current_year" cms-function-type="content"
+                >&nbsp;2020&nbsp;</span
+              ><span cms-site-name>nocodetheme</span>. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="/tailwind_theme/pgia/lib/pgia.js"></script>
+    <script src="/tailwind_theme/js/main.js"></script>
+  </body>
 </html>
