@@ -1,0 +1,649 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 2,
+  "settings": {
+    "color": {
+      "palette": [
+        {
+          "color": "white",
+          "name": "current",
+          "slug": "current"
+        },
+        {
+          "color": "rgba(0,0,0,0)",
+          "name": "transparent",
+          "slug": "transparent"
+        },
+        {
+          "color": "black",
+          "name": "black",
+          "slug": "black"
+        },
+        {
+          "color": "white",
+          "name": "white",
+          "slug": "white"
+        },
+        {
+          "color": "rgba(0,0,0,0.5)",
+          "name": "inherit",
+          "slug": "inherit"
+        },
+        {
+          "color": "rgba(249,250,251,1)",
+          "name": "gray-50",
+          "slug": "gray-50"
+        },
+        {
+          "color": "rgba(243,244,246,1)",
+          "name": "gray-100",
+          "slug": "gray-100"
+        },
+        {
+          "color": "rgba(229,231,235,1)",
+          "name": "gray-200",
+          "slug": "gray-200"
+        },
+        {
+          "color": "rgba(209,213,219,1)",
+          "name": "gray-300",
+          "slug": "gray-300"
+        },
+        {
+          "color": "rgba(156,163,175,1)",
+          "name": "gray-400",
+          "slug": "gray-400"
+        },
+        {
+          "color": "rgba(107,114,128,1)",
+          "name": "gray-500",
+          "slug": "gray-500"
+        },
+        {
+          "color": "rgba(75,85,99,1)",
+          "name": "gray-600",
+          "slug": "gray-600"
+        },
+        {
+          "color": "rgba(55,65,81,1)",
+          "name": "gray-700",
+          "slug": "gray-700"
+        },
+        {
+          "color": "rgba(31,41,55,1)",
+          "name": "gray-800",
+          "slug": "gray-800"
+        },
+        {
+          "color": "rgba(17,24,39,1)",
+          "name": "gray-900",
+          "slug": "gray-900"
+        },
+        {
+          "color": "rgba(254,242,242,1)",
+          "name": "red-50",
+          "slug": "red-50"
+        },
+        {
+          "color": "rgba(254,226,226,1)",
+          "name": "red-100",
+          "slug": "red-100"
+        },
+        {
+          "color": "rgba(254,202,202,1)",
+          "name": "red-200",
+          "slug": "red-200"
+        },
+        {
+          "color": "rgba(252,165,165,1)",
+          "name": "red-300",
+          "slug": "red-300"
+        },
+        {
+          "color": "rgba(248,113,113,1)",
+          "name": "red-400",
+          "slug": "red-400"
+        },
+        {
+          "color": "rgba(239,68,68,1)",
+          "name": "red-500",
+          "slug": "red-500"
+        },
+        {
+          "color": "rgba(220,38,38,1)",
+          "name": "red-600",
+          "slug": "red-600"
+        },
+        {
+          "color": "rgba(185,28,28,1)",
+          "name": "red-700",
+          "slug": "red-700"
+        },
+        {
+          "color": "rgba(153,27,27,1)",
+          "name": "red-800",
+          "slug": "red-800"
+        },
+        {
+          "color": "rgba(127,29,29,1)",
+          "name": "red-900",
+          "slug": "red-900"
+        },
+        {
+          "color": "rgba(255,251,235,1)",
+          "name": "yellow-50",
+          "slug": "yellow-50"
+        },
+        {
+          "color": "rgba(254,243,199,1)",
+          "name": "yellow-100",
+          "slug": "yellow-100"
+        },
+        {
+          "color": "rgba(253,230,138,1)",
+          "name": "yellow-200",
+          "slug": "yellow-200"
+        },
+        {
+          "color": "rgba(252,211,77,1)",
+          "name": "yellow-300",
+          "slug": "yellow-300"
+        },
+        {
+          "color": "rgba(251,191,36,1)",
+          "name": "yellow-400",
+          "slug": "yellow-400"
+        },
+        {
+          "color": "rgba(245,158,11,1)",
+          "name": "yellow-500",
+          "slug": "yellow-500"
+        },
+        {
+          "color": "rgba(217,119,6,1)",
+          "name": "yellow-600",
+          "slug": "yellow-600"
+        },
+        {
+          "color": "rgba(180,83,9,1)",
+          "name": "yellow-700",
+          "slug": "yellow-700"
+        },
+        {
+          "color": "rgba(146,64,14,1)",
+          "name": "yellow-800",
+          "slug": "yellow-800"
+        },
+        {
+          "color": "rgba(120,53,15,1)",
+          "name": "yellow-900",
+          "slug": "yellow-900"
+        },
+        {
+          "color": "rgba(236,253,245,1)",
+          "name": "green-50",
+          "slug": "green-50"
+        },
+        {
+          "color": "rgba(209,250,229,1)",
+          "name": "green-100",
+          "slug": "green-100"
+        },
+        {
+          "color": "rgba(167,243,208,1)",
+          "name": "green-200",
+          "slug": "green-200"
+        },
+        {
+          "color": "rgba(110,231,183,1)",
+          "name": "green-300",
+          "slug": "green-300"
+        },
+        {
+          "color": "rgba(52,211,153,1)",
+          "name": "green-400",
+          "slug": "green-400"
+        },
+        {
+          "color": "rgba(16,185,129,1)",
+          "name": "green-500",
+          "slug": "green-500"
+        },
+        {
+          "color": "rgba(5,150,105,1)",
+          "name": "green-600",
+          "slug": "green-600"
+        },
+        {
+          "color": "rgba(4,120,87,1)",
+          "name": "green-700",
+          "slug": "green-700"
+        },
+        {
+          "color": "rgba(6,95,70,1)",
+          "name": "green-800",
+          "slug": "green-800"
+        },
+        {
+          "color": "rgba(6,78,59,1)",
+          "name": "green-900",
+          "slug": "green-900"
+        },
+        {
+          "color": "rgba(239,246,255,1)",
+          "name": "blue-50",
+          "slug": "blue-50"
+        },
+        {
+          "color": "rgba(219,234,254,1)",
+          "name": "blue-100",
+          "slug": "blue-100"
+        },
+        {
+          "color": "rgba(191,219,254,1)",
+          "name": "blue-200",
+          "slug": "blue-200"
+        },
+        {
+          "color": "rgba(147,197,253,1)",
+          "name": "blue-300",
+          "slug": "blue-300"
+        },
+        {
+          "color": "rgba(96,165,250,1)",
+          "name": "blue-400",
+          "slug": "blue-400"
+        },
+        {
+          "color": "rgba(59,130,246,1)",
+          "name": "blue-500",
+          "slug": "blue-500"
+        },
+        {
+          "color": "rgba(37,99,235,1)",
+          "name": "blue-600",
+          "slug": "blue-600"
+        },
+        {
+          "color": "rgba(29,78,216,1)",
+          "name": "blue-700",
+          "slug": "blue-700"
+        },
+        {
+          "color": "rgba(30,64,175,1)",
+          "name": "blue-800",
+          "slug": "blue-800"
+        },
+        {
+          "color": "rgba(30,58,138,1)",
+          "name": "blue-900",
+          "slug": "blue-900"
+        },
+        {
+          "color": "rgba(238,242,255,1)",
+          "name": "indigo-50",
+          "slug": "indigo-50"
+        },
+        {
+          "color": "rgba(224,231,255,1)",
+          "name": "indigo-100",
+          "slug": "indigo-100"
+        },
+        {
+          "color": "rgba(199,210,254,1)",
+          "name": "indigo-200",
+          "slug": "indigo-200"
+        },
+        {
+          "color": "rgba(165,180,252,1)",
+          "name": "indigo-300",
+          "slug": "indigo-300"
+        },
+        {
+          "color": "rgba(129,140,248,1)",
+          "name": "indigo-400",
+          "slug": "indigo-400"
+        },
+        {
+          "color": "rgba(99,102,241,1)",
+          "name": "indigo-500",
+          "slug": "indigo-500"
+        },
+        {
+          "color": "rgba(79,70,229,1)",
+          "name": "indigo-600",
+          "slug": "indigo-600"
+        },
+        {
+          "color": "rgba(67,56,202,1)",
+          "name": "indigo-700",
+          "slug": "indigo-700"
+        },
+        {
+          "color": "rgba(55,48,163,1)",
+          "name": "indigo-800",
+          "slug": "indigo-800"
+        },
+        {
+          "color": "rgba(49,46,129,1)",
+          "name": "indigo-900",
+          "slug": "indigo-900"
+        },
+        {
+          "color": "rgba(245,243,255,1)",
+          "name": "purple-50",
+          "slug": "purple-50"
+        },
+        {
+          "color": "rgba(237,233,254,1)",
+          "name": "purple-100",
+          "slug": "purple-100"
+        },
+        {
+          "color": "rgba(221,214,254,1)",
+          "name": "purple-200",
+          "slug": "purple-200"
+        },
+        {
+          "color": "rgba(196,181,253,1)",
+          "name": "purple-300",
+          "slug": "purple-300"
+        },
+        {
+          "color": "rgba(167,139,250,1)",
+          "name": "purple-400",
+          "slug": "purple-400"
+        },
+        {
+          "color": "rgba(139,92,246,1)",
+          "name": "purple-500",
+          "slug": "purple-500"
+        },
+        {
+          "color": "rgba(124,58,237,1)",
+          "name": "purple-600",
+          "slug": "purple-600"
+        },
+        {
+          "color": "rgba(109,40,217,1)",
+          "name": "purple-700",
+          "slug": "purple-700"
+        },
+        {
+          "color": "rgba(91,33,182,1)",
+          "name": "purple-800",
+          "slug": "purple-800"
+        },
+        {
+          "color": "rgba(76,29,149,1)",
+          "name": "purple-900",
+          "slug": "purple-900"
+        },
+        {
+          "color": "rgba(253,242,248,1)",
+          "name": "pink-50",
+          "slug": "pink-50"
+        },
+        {
+          "color": "rgba(252,231,243,1)",
+          "name": "pink-100",
+          "slug": "pink-100"
+        },
+        {
+          "color": "rgba(251,207,232,1)",
+          "name": "pink-200",
+          "slug": "pink-200"
+        },
+        {
+          "color": "rgba(249,168,212,1)",
+          "name": "pink-300",
+          "slug": "pink-300"
+        },
+        {
+          "color": "rgba(244,114,182,1)",
+          "name": "pink-400",
+          "slug": "pink-400"
+        },
+        {
+          "color": "rgba(236,72,153,1)",
+          "name": "pink-500",
+          "slug": "pink-500"
+        },
+        {
+          "color": "rgba(219,39,119,1)",
+          "name": "pink-600",
+          "slug": "pink-600"
+        },
+        {
+          "color": "rgba(190,24,93,1)",
+          "name": "pink-700",
+          "slug": "pink-700"
+        },
+        {
+          "color": "rgba(157,23,77,1)",
+          "name": "pink-800",
+          "slug": "pink-800"
+        },
+        {
+          "color": "rgba(131,24,67,1)",
+          "name": "pink-900",
+          "slug": "pink-900"
+        },
+        {
+          "color": "#fbeae0",
+          "name": "primary-50",
+          "slug": "primary-50"
+        },
+        {
+          "color": "#fcd3bb",
+          "name": "primary-100",
+          "slug": "primary-100"
+        },
+        {
+          "color": "#fabb98",
+          "name": "primary-200",
+          "slug": "primary-200"
+        },
+        {
+          "color": "#f5a475",
+          "name": "primary-300",
+          "slug": "primary-300"
+        },
+        {
+          "color": "#ef8d52",
+          "name": "primary-400",
+          "slug": "primary-400"
+        },
+        {
+          "color": "rgb(230,117,46)",
+          "name": "primary-500",
+          "slug": "primary-500"
+        },
+        {
+          "color": "#be6126",
+          "name": "primary-600",
+          "slug": "primary-600"
+        },
+        {
+          "color": "#984d1f",
+          "name": "primary-700",
+          "slug": "primary-700"
+        },
+        {
+          "color": "#733b17",
+          "name": "primary-800",
+          "slug": "primary-800"
+        },
+        {
+          "color": "#502910",
+          "name": "primary-900",
+          "slug": "primary-900"
+        },
+        {
+          "color": "#ecdfde",
+          "name": "secondary-50",
+          "slug": "secondary-50"
+        },
+        {
+          "color": "#d9b9b5",
+          "name": "secondary-100",
+          "slug": "secondary-100"
+        },
+        {
+          "color": "#c4948e",
+          "name": "secondary-200",
+          "slug": "secondary-200"
+        },
+        {
+          "color": "#af7068",
+          "name": "secondary-300",
+          "slug": "secondary-300"
+        },
+        {
+          "color": "#974d45",
+          "name": "secondary-400",
+          "slug": "secondary-400"
+        },
+        {
+          "color": "rgb(126,40,36)",
+          "name": "secondary-500",
+          "slug": "secondary-500"
+        },
+        {
+          "color": "#68211f",
+          "name": "secondary-600",
+          "slug": "secondary-600"
+        },
+        {
+          "color": "#531b19",
+          "name": "secondary-700",
+          "slug": "secondary-700"
+        },
+        {
+          "color": "#3f1414",
+          "name": "secondary-800",
+          "slug": "secondary-800"
+        },
+        {
+          "color": "#2c0e0d",
+          "name": "secondary-900",
+          "slug": "secondary-900"
+        },
+        {
+          "color": "#ffeef4",
+          "name": "color3-50",
+          "slug": "color3-50"
+        },
+        {
+          "color": "#ffdbe8",
+          "name": "color3-100",
+          "slug": "color3-100"
+        },
+        {
+          "color": "#ffc8dc",
+          "name": "color3-200",
+          "slug": "color3-200"
+        },
+        {
+          "color": "#ffb4cf",
+          "name": "color3-300",
+          "slug": "color3-300"
+        },
+        {
+          "color": "#fea0c3",
+          "name": "color3-400",
+          "slug": "color3-400"
+        },
+        {
+          "color": "rgb(252,140,183)",
+          "name": "color3-500",
+          "slug": "color3-500"
+        },
+        {
+          "color": "#d07497",
+          "name": "color3-600",
+          "slug": "color3-600"
+        },
+        {
+          "color": "#a65d79",
+          "name": "color3-700",
+          "slug": "color3-700"
+        },
+        {
+          "color": "#7e465c",
+          "name": "color3-800",
+          "slug": "color3-800"
+        },
+        {
+          "color": "#583140",
+          "name": "color3-900",
+          "slug": "color3-900"
+        },
+        {
+          "color": "#e7eff1",
+          "name": "color4-50",
+          "slug": "color4-50"
+        },
+        {
+          "color": "#cbdce0",
+          "name": "color4-100",
+          "slug": "color4-100"
+        },
+        {
+          "color": "#b0c9cf",
+          "name": "color4-200",
+          "slug": "color4-200"
+        },
+        {
+          "color": "#95b7bf",
+          "name": "color4-300",
+          "slug": "color4-300"
+        },
+        {
+          "color": "#79a5af",
+          "name": "color4-400",
+          "slug": "color4-400"
+        },
+        {
+          "color": "rgb(93,147,159)",
+          "name": "color4-500",
+          "slug": "color4-500"
+        },
+        {
+          "color": "#4d7a84",
+          "name": "color4-600",
+          "slug": "color4-600"
+        },
+        {
+          "color": "#3e6169",
+          "name": "color4-700",
+          "slug": "color4-700"
+        },
+        {
+          "color": "#2f4a50",
+          "name": "color4-800",
+          "slug": "color4-800"
+        },
+        {
+          "color": "#213338",
+          "name": "color4-900",
+          "slug": "color4-900"
+        }
+      ]
+    },
+    "typography": {
+      "fontFamilies": [
+        {
+          "fontFamily": "'Lato', sans-serif",
+          "name": "Lato",
+          "slug": "lato"
+        },
+        {
+          "fontFamily": "\"Palatino Linotype\", \"Book Antiqua\", Palatino, serif",
+          "name": "\"Palatino Linotype\", \"Book Antiqua\", Palatino, serif",
+          "slug": "palatino-linotype-book-antiqua-palatino-serif"
+        }
+      ]
+    }
+  }
+}
